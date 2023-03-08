@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>J query tutorial</title>
-    
+
 </head>
+
 <body>
-    <p>this is my file hello new world</p>
-    <p>this is my file hello new world2</p>
-    <p>this is my file hello new world3</p>
+    <p class="odd">this is my file hello new world</p>
+    <p id="second">this is my file hello new world2</p>
+    <p class="odd">this is my file hello new world3</p>
     <p>this is my file hello new world4</p>
 </body>
 <script src="js/jquery-3.6.3.min.js"></script>
@@ -24,28 +26,65 @@
 
 <script>
 
-    //below: $ and jQuery is the same thing
-    console.log($)//$ is the shortcut of jQuery
-    //cdn is content delivery network
-    //meaning you can serve jQuery using the internet 
+    $(document).ready(function () {//ensures that the page loads first before the javascript executes
+        //your jQuery code here 
+
+        //below: $ and jQuery is the same thing
+        console.log($)//$ is the shortcut of jQuery
+        //cdn is content delivery network
+        //meaning you can serve jQuery using the internet 
 
 
-    //*************************************************************************
-    //$('selector').action()                                      // this is the syntax of jQuery
-    //$('p').click(); //click on paragraph p
-    $('p').click(function(){
-        console.log('you clicked on <p>')
-        //    $('p').hide()
+        //*************************************************************************
+        //$('selector').action()                                      // this is the syntax of jQuery
+        //$('p').click(); //click on paragraph p
+        $('p').click(function () {
+            console.log('you clicked on <p>', this)
+            //    $('p').hide()
 
-        //if we use the above code, on one single click all the p elements gets hidden
-        //if we want to click individually and hide them individually then we use the this keyword
-        $(this).hide()
+            //if we use the above code, on one single click all the p elements gets hidden
+            //if we want to click individually and hide them individually then we use the this keyword
+            
+            //$(this).hide()
 
-        //likewise we can also select #id and .classes
-        //$('#id').hide()
-        //$('.class').hide()
+            //likewise we can also select #id and .classes
+            //$('#id').hide()
+            //$('.class').hide()
 
-    }); //click on paragraph p
+        }); //click on paragraph p
+
+        //
+        // there are 3 main types of selectors in jQuery
+        //1.element selector
+        //2. id selector
+        //3. class selector
+
+        //Element Selector
+        //element selector which clicks on all p
+        //$('p').click()
+
+        //2. This is an example of ID selector
+        //$('#second').click()//example of id selector
+        
+        //d. This is an example of class selector
+        //$('.odd').click()//example of id selector
+
+
+        //Other Selectors
+       // $('*').click()//clicks on all the elements
+        //$('p.odd').click()//clicks on all the elements
+        
+        //p:first means the first element of a p tag
+        //
+        $('p:first').click()//clicks on all the elements
+
+
+
+        
+    })
+
+
 
 </script>
+
 </html>
