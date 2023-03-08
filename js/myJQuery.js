@@ -16,7 +16,7 @@ $(document).ready(function () {//ensures that the page loads first before the ja
 
         //if we use the above code, on one single click all the p elements gets hidden
         //if we want to click individually and hide them individually then we use the this keyword
-        
+
         //$(this).hide()
 
         //likewise we can also select #id and .classes
@@ -24,6 +24,7 @@ $(document).ready(function () {//ensures that the page loads first before the ja
         //$('.class').hide()
 
     }); //click on paragraph p
+    /*
     $('p').dblclick(function () {
         console.log('Double Clikked', this)
       
@@ -51,7 +52,7 @@ $(document).ready(function () {//ensures that the page loads first before the ja
 
     }, function(){
         console.log('thanks for comming')
-    });
+    });*/
 
     //
     // there are 3 main types of selectors in jQuery
@@ -65,27 +66,40 @@ $(document).ready(function () {//ensures that the page loads first before the ja
 
     //2. This is an example of ID selector
     //$('#second').click()//example of id selector
-    
+
     //d. This is an example of class selector
     //$('.odd').click()//example of id selector
 
 
     //Other Selectors
-   // $('*').click()//clicks on all the elements
+    // $('*').click()//clicks on all the elements
     //$('p.odd').click()//clicks on all the elements
-    
+
     //p:first means the first element of a p tag
     //
-    $('p:first').click()//clicks on all the elements
-    $('*').click()
+    //$('p:first').click()//clicks on all the elements
+    //$('*').click()
     //Event's in jQuery
     //Mouse Events = click, dblclick, mouseenter, mouseleave
     //keyboard Events = keypress, keydown, keyup,
     //formEvents = submit, change, focus,blur
     //document/window events = load resize, scroll, unload
 
+    //demo-ing on methods
+
+    $('p').on({
+        'click': function() {
+            console.log('Thasnks for clicking', this)
+        },
+
+        mouseleave: function(){
+            console.log("mouseleave")
+        }
 
 
-    
+    });
+
+
+
 })
 
