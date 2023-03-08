@@ -161,6 +161,12 @@ $(document).ready(function () {//ensures that the page loads first before the ja
    //AJAX using JQuery
    $.get('https://code.jquery.com/jquery-3.6.3.js', function(data, status){alert(data)})
    $.get('https://code.jquery.com/jquery-3.6.3.js', function(data, status){alert(status)})
+   $.get('https://code.jquery.com/jquery-3.6.3.js', function(data, status){alert(status)})
+   
+
+    $.post('https://code.jquery.com/jquery-3.3.1.js',
+        { name: 'harry', channel: 'code with harry' },
+        function (data, status) { alert(status) });
 
 
     
