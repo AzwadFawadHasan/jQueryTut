@@ -88,42 +88,84 @@ $(document).ready(function () {//ensures that the page loads first before the ja
     //demo-ing on methods
 
     $('p').on({
-        'click': function() {
+        'click': function () {
             console.log('Thasnks for clicking', this)
         },
 
-        mouseleave: function(){
+        mouseleave: function () {
             console.log("mouseleave")
         }
 
 
     });
-    $('#wiki').hide(1000, function(){
+    $('#wiki').hide(1000, function () {
         console.log('hide complete')
-    }); $('#wiki').show(1000, function(){
+    }); $('#wiki').show(1000, function () {
         console.log('show complete')
     })
 
-    $('#but').click(function(){
+    $('#but').click(function () {
         $('#wiki').toggle(1000)
     })
-    $('#but3').click(function(){
+    $('#but3').click(function () {
         $('#wiki2').fadeToggle(1000)
     })
 
-    $('#but2').click(function(){
-        $('#wiki2').fadeIn(1000,()=>{
+    $('#but2').click(function () {
+        $('#wiki2').fadeIn(1000, () => {
             //document.write('faded in')
             console.log('fadedin')
-            $('#wiki2').fadeOut(1000,()=>{
+            $('#wiki2').fadeOut(1000, () => {
                 console.log('fadedOut')
                 $('wiki2').fadeTo(0.5)
             })
-            
+
         })
     })
 
 
 
+    $('#wiki2').slideUp(1000)
+    
+    $('#wiki2').slideToggle(1000)
+    $('#wiki2').slideDown(1000)
+
+
+    //Animate function in  JQuery
+    $('#wiki2').animate({opacity:0.3,
+       // height:'1550px'
+        //,width:'350px'
+    },2000)
+
+    $('#wiki2').animate({opacity:0.3,
+       // height:'1550px'
+        //,width:'350px'
+    },'slow')
+
+    $('#wiki').animate({opacity:0.3},3000)
+    $('#wiki').animate({opacity:0.9},1000)
+    //$('#wiki').animate({height:'13px'},1000)
+    //$('#wiki').animate({width:'13px'},1000)
+    //$('#wiki').animate({height:'13px'},1000)
+    //$('#wiki').animate({width:'130px'},1000)
+
+    
+    $('#ta').animate(1000, ()=>{
+        $('#ta').val('value changeseS')
+    }
+    );
+    $('#inp').val('text line ')
+   $('inp').remove()
+   $('#wiki2').css('background-color', 'red')
+
+   //AJAX using JQuery
+   $.get('https://code.jquery.com/jquery-3.6.3.js', function(data, status){alert(data)})
+   $.get('https://code.jquery.com/jquery-3.6.3.js', function(data, status){alert(status)})
+
+
+    
+
+
+    
 })
 
