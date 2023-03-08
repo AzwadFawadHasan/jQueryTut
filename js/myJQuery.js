@@ -98,6 +98,30 @@ $(document).ready(function () {//ensures that the page loads first before the ja
 
 
     });
+    $('#wiki').hide(1000, function(){
+        console.log('hide complete')
+    }); $('#wiki').show(1000, function(){
+        console.log('show complete')
+    })
+
+    $('#but').click(function(){
+        $('#wiki').toggle(1000)
+    })
+    $('#but3').click(function(){
+        $('#wiki2').fadeToggle(1000)
+    })
+
+    $('#but2').click(function(){
+        $('#wiki2').fadeIn(1000,()=>{
+            //document.write('faded in')
+            console.log('fadedin')
+            $('#wiki2').fadeOut(1000,()=>{
+                console.log('fadedOut')
+                $('wiki2').fadeTo(0.5)
+            })
+            
+        })
+    })
 
 
 
