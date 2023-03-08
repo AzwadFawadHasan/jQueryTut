@@ -8,16 +8,44 @@
     
 </head>
 <body>
-    this is my file hello new world
+    <p>this is my file hello new world</p>
+    <p>this is my file hello new world2</p>
+    <p>this is my file hello new world3</p>
+    <p>this is my file hello new world4</p>
 </body>
 <script src="js/jquery-3.6.3.min.js"></script>
+<!--
+    
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 
+-->
 
-<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 
 
 <script>
 
-    console.log($)
+    //below: $ and jQuery is the same thing
+    console.log($)//$ is the shortcut of jQuery
+    //cdn is content delivery network
+    //meaning you can serve jQuery using the internet 
+
+
+    //*************************************************************************
+    //$('selector').action()                                      // this is the syntax of jQuery
+    //$('p').click(); //click on paragraph p
+    $('p').click(function(){
+        console.log('you clicked on <p>')
+        //    $('p').hide()
+
+        //if we use the above code, on one single click all the p elements gets hidden
+        //if we want to click individually and hide them individually then we use the this keyword
+        $(this).hide()
+
+        //likewise we can also select #id and .classes
+        //$('#id').hide()
+        //$('.class').hide()
+
+    }); //click on paragraph p
+
 </script>
 </html>
